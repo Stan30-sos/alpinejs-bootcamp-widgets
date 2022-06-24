@@ -1,0 +1,48 @@
+body{
+    background-color: pink;
+}
+@media(min-width :768px){
+    .pizza{
+        display: flex;
+    }
+}
+img{
+    margin: auto;
+    display: block;
+    width: 200px;
+    height: 150px;
+
+}
+.small{
+    flex: 1;
+    padding: 1em;
+    background-color: aqua;
+    border: solid black;
+    margin: 1em;
+
+}
+.medium{
+    flex: 1;
+ padding: 1em;
+ background-color: red;
+ border: solid black;
+ margin: 1em;   
+}
+.large{
+ flex: 1;   
+ padding: 1em;
+ background-color: yellow;
+ border: solid black;
+ margin: 1em;  
+}
+.footer{
+    padding: 1em;
+    border: solid white 1em;
+    background-color: gray;
+    text-align: left;
+}
+h1{
+    text-align: center;
+    border:solid white ;
+    background-color: gray;
+}
