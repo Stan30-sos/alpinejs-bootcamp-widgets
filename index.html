@@ -4,11 +4,67 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="transportfee.js" defer></script>
+    <script src="transportfee-widget.js" defer></script>
+    <script src="enough-airtime.js" defer></script>
+    <script src="enoughairtime-widget.js" defer></script>
     <script src="//unpkg.com/alpinejs" defer></script>
-    <link rel="stylesheet" href="widgets-style.css">
     <title>Document</title>
+    <style>
+        .fee{
+            background-color: aqua;
+            padding: 1em;
+           
+        }
+        .message{
+            background-color: salmon;
+            padding: 1em;
+            margin-bottom: 1em;
+        }
+
+        .input > label{
+            display: inline-block;
+            width: 15em;
+            padding: 0.5em;
+            font-weight: bold;
+        }
+
+        .input > input[type="text"] {
+            padding: 0.5em;
+            margin: 0.5em;
+
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container" x-data="feeWidget" >
+
+    <h2>TransportFee widget</h2>
+<div class="fee" x-text="message">
+    You will be charged...
+</div>
+
+<div>
+    <label for="shift">Please enter your shift here:</label>
+<input class="input" type="text" placeholder=" Your shift" x-model="shift">
+<button @click="shiftFee"> Check fee</button>
+</div>
+</div>
+<div class="airtime" x-data="airtimeWidget">
+<h2>Enough airtime widget</h2>
+<div class="input">
+<label for="usage">Please enter your airtime usage</label>
+<input type="text" id="usage" placeholder="used for" x-model="airTimeUsage" >
+</div>
+<div class="input">
+<label for="amount">Amount available: </label>
+<input type="text" id="amount" placeholder="amount you have" x-model="airTimeAmount">
+</div>
+<div class="message" x-text="airtimeMessage">
+Airtime left display here...
+</div>
+<button @click="airtimeLeft"> Airtime balance</button>
+</div>
+   
 </body>
 </html>
