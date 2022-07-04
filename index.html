@@ -8,6 +8,10 @@
     <script src="transportfee-widget.js" defer></script>
     <script src="enough-airtime.js" defer></script>
     <script src="enoughairtime-widget.js" defer></script>
+    <script src="totalphone-bill.js" defer></script>
+    <script src="totalphonebill-widget.js" defer></script>
+    <script src="longestword.js" defer></script>
+    <script src="longestword-widget.js" defer></script>
     <script src="//unpkg.com/alpinejs" defer></script>
     <title>Document</title>
     <style>
@@ -33,6 +37,20 @@
             padding: 0.5em;
             margin: 0.5em;
 
+        }
+        .bill-input > input[type="text"]{
+            margin: 0.5em;
+            padding: 0.5em;
+        }
+        .bill-message{
+            background-color: seagreen;
+            padding: 1em;
+            margin-bottom: 1em;
+        }
+        .word-message{
+            background-color: slategray;
+            padding: 1em;
+            margin-bottom: 1.5em;
         }
     </style>
 </head>
@@ -65,6 +83,29 @@ Airtime left display here...
 </div>
 <button @click="airtimeLeft"> Airtime balance</button>
 </div>
-   
+   <div class="phonebill" x-data="phonebillWidget">
+<h2>Total Phone Bill Widget</h2>
+<div class="bill-input">
+<label for="bill">Plese enter your </label>
+<input type="text" id="bill" placeholder="items here" x-model="itemsUsed">
+</div>
+<div class="bill-message"  x-text="billMessage">
+Your total bill is ....
+</div>
+<button @click="billDue" >Check bill</button>
+   </div>
+   <div class="wordgame" x-data="wordWidget">
+    <h2> Find the longest word Widget</h2>
+<div class="input" >
+<label for=""> Please Enter your sentence here:</label>
+<input type="text" x-model="sentence">
+<div class="word-message" x-text="longMessage">
+your longest word is
+</div>
+<div>
+    <button @click="longestWordCheck">search</button>
+</div>
+</div>
+   </div>
 </body>
 </html>
